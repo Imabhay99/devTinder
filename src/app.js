@@ -1,6 +1,7 @@
 const express = require("express");
+const { adminAuth } = require("./middlewares/auth");
 app = express();
-app.get("/User", (req, res) => {
+app.get("/User", adminAuth, (req, res) => {
   res.send({
     firstName: "Abhay",
     lastName: "Mishra",
@@ -8,7 +9,7 @@ app.get("/User", (req, res) => {
     city: "Bangalore",
   });
 });
-app.use("/hello", (req, res) => {
+app.use("/hello", adminAuth, (req, res) => {
   res.send("Hello World hoo! This is my first nodejs project");
 });
 app.listen(3000, () => {
