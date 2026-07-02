@@ -7,11 +7,4 @@ const connectDB = async () => {
     "mongodb+srv://abhaymishra9945_db_user:X6iCtUICMnHZwhYr@cluster0.6ihmmtz.mongodb.net/DevTinder?retryWrites=true&w=majority&appName=Cluster0",
   );
 };
-
-connectDB()
-  .then(() => {
-    console.log("Database connection established");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
+module.exports = connectDB;
